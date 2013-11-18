@@ -180,6 +180,10 @@ namespace MDS.Organization
         /// <param name="name">Name of the new application</param>
         public MDSClientApplication AddApplication(string name)
         {
+
+            if (_settings.Applications.Exists(a => a.Name == name))
+                throw new ArgumentException(String.Format("Application '{0}' already exists ", name));
+
             //Add to settings
             lock (_settings.Applications)
             {
