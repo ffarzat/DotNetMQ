@@ -37,6 +37,7 @@ namespace MDS.Communication.Messages.ControllerMessages
         public const int MessageTypeIdGetApplicationWebServicesMessage = 12;
         public const int MessageTypeIdGetApplicationWebServicesResponseMessage = 13;
         public const int MessageTypeIdUpdateApplicationWebServicesMessage = 14;
+        public const int MessageTypeIdGetWaitingMessagesOfApplication = 15;
 
         public static ControlMessage CreateMessageByTypeId(int messageTypeId)
         {
@@ -69,6 +70,8 @@ namespace MDS.Communication.Messages.ControllerMessages
                 case MessageTypeIdGetApplicationWebServicesResponseMessage:
                     return new GetApplicationWebServicesResponseMessage();
                 case MessageTypeIdUpdateApplicationWebServicesMessage:
+                    return new UpdateApplicationWebServicesMessage();
+                case MessageTypeIdGetWaitingMessagesOfApplication:
                     return new UpdateApplicationWebServicesMessage();
                 default:
                     throw new MDSException("Undefined ControlMessage MessageTypeId: " + messageTypeId);

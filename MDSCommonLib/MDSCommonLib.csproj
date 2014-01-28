@@ -101,6 +101,7 @@
     <Compile Include="Communication\Messages\ControllerMessages\GetApplicationWebServicesResponseMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\GetServerGraphMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\GetServerGraphResponseMessage.cs" />
+    <Compile Include="Communication\Messages\ControllerMessages\GetWaitingMessagesOfApplicationMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\RemoveApplicationMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\RemoveApplicationResponseMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\ServerGraphInfo.cs" />
