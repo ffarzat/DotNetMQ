@@ -228,7 +228,7 @@ namespace MDS.Organization
                                          {
                                              Name = applicationList[i].Name,
                                              CommunicatorCount = applicationList[i].ConnectedCommunicatorCount,
-                                             MessageCount = applicationList[i].GetWaitingMessages(applicationList[i].GetMaxWaitingMessageId() +1, 1000).Count
+                                             MessageCount = applicationList[i].GetWaitingMessages(0, applicationList[i].GetMaxWaitingMessageId() +1).Count
                                          };
             }
 
