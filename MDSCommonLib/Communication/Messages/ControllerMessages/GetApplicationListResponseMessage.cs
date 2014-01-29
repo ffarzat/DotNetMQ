@@ -87,6 +87,7 @@ namespace MDS.Communication.Messages.ControllerMessages
             {
                 serializer.WriteStringUTF8(Name);
                 serializer.WriteInt32(CommunicatorCount);
+                serializer.WriteInt32(MessageCount);
             }
 
             /// <summary>
@@ -97,6 +98,7 @@ namespace MDS.Communication.Messages.ControllerMessages
             {
                 Name = deserializer.ReadStringUTF8();
                 CommunicatorCount = deserializer.ReadInt32();
+                MessageCount = deserializer.ReadInt32();
             }
         }
     }
