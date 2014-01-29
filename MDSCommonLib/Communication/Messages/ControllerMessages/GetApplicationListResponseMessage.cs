@@ -75,6 +75,11 @@ namespace MDS.Communication.Messages.ControllerMessages
             public int CommunicatorCount { get; set; }
 
             /// <summary>
+            /// Currently Message (Waiting) count.
+            /// </summary>
+            public int MessageCount { get; set; }
+
+            /// <summary>
             /// Serializes this message.
             /// </summary>
             /// <param name="serializer">Serializer used to serialize objects</param>

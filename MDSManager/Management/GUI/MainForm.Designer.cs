@@ -56,20 +56,20 @@
             this.serverGraphToolStripMenuItem,
             this.routesToolStripMenuItem});
             this.mdsServersToolStripMenuItem.Name = "mdsServersToolStripMenuItem";
-            this.mdsServersToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.mdsServersToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.mdsServersToolStripMenuItem.Text = "MDS Servers";
             // 
             // serverGraphToolStripMenuItem
             // 
             this.serverGraphToolStripMenuItem.Name = "serverGraphToolStripMenuItem";
-            this.serverGraphToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.serverGraphToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.serverGraphToolStripMenuItem.Text = "Server Graph";
             this.serverGraphToolStripMenuItem.Click += new System.EventHandler(this.ServerGraphToolStripMenuItem_Click);
             // 
             // routesToolStripMenuItem
             // 
             this.routesToolStripMenuItem.Name = "routesToolStripMenuItem";
-            this.routesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.routesToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.routesToolStripMenuItem.Text = "Routes";
             this.routesToolStripMenuItem.Visible = false;
             this.routesToolStripMenuItem.Click += new System.EventHandler(this.RoutesToolStripMenuItem_Click);
@@ -79,13 +79,13 @@
             this.clientApplicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.applicationListToolStripMenuItem});
             this.clientApplicationsToolStripMenuItem.Name = "clientApplicationsToolStripMenuItem";
-            this.clientApplicationsToolStripMenuItem.Size = new System.Drawing.Size(117, 20);
+            this.clientApplicationsToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
             this.clientApplicationsToolStripMenuItem.Text = "Client Applications";
             // 
             // applicationListToolStripMenuItem
             // 
             this.applicationListToolStripMenuItem.Name = "applicationListToolStripMenuItem";
-            this.applicationListToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.applicationListToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.applicationListToolStripMenuItem.Text = "Application List";
             this.applicationListToolStripMenuItem.Click += new System.EventHandler(this.ApplicationListToolStripMenuItem_Click);
             // 
@@ -100,8 +100,8 @@
             this.Name = "MainForm";
             this.Text = "MDS Management GUI";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.ResumeLayout(false);

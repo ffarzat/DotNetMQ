@@ -19,17 +19,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 using log4net;
 using MDS.Communication.Messages.ControllerMessages;
 using MDS.Exceptions;
 using MDS.GUI;
+
+using System.Linq;
 
 namespace MDS.Management.GUI.ClientApplications
 {
@@ -255,7 +252,7 @@ namespace MDS.Management.GUI.ClientApplications
                 {
                     throw new MDSException("Incorrect message type. MessageTypeId = " + message.MessageTypeId + ", but Type of object: " + message.GetType().Name);
                 }
-
+                
                 FillApplicationList(applicationListMessage.ClientApplications);
             }
             catch (Exception ex)
@@ -281,7 +278,8 @@ namespace MDS.Management.GUI.ClientApplications
                         new ApplicationListItem
                             {
                                 ApplicationName = applicationInfo.Name,
-                                ConnectedClients = applicationInfo.CommunicatorCount
+                                ConnectedClients = applicationInfo.CommunicatorCount,
+                                Messages = applicationInfo.MessageCount
                             });
                 }
 
@@ -414,6 +412,11 @@ namespace MDS.Management.GUI.ClientApplications
             /// Currently connected communicator count.
             /// </summary>
             public int ConnectedClients { get; set; }
+
+            /// <summary>
+            /// Currently messages in queue count
+            /// </summary>
+            public int Messages { get; set; }
         }
 
         #endregion

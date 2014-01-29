@@ -163,7 +163,7 @@ namespace MDS.Organization
                     ProcessGetApplicationListMessage(communicator, controllerMessage);
                     break;
                 case ControlMessageFactory.MessageTypeIdGetWaitingMessagesOfApplicationMessage:
-                    ProcessGetWaitingMessagesOfApplicationMessage(controlMessage as GetWaitingMessagesOfApplicationMessage);
+                    ProcessGetWaitingMessagesOfApplicationMessage(communicator, controlMessage as GetWaitingMessagesOfApplicationMessage, controllerMessage);
                     break;
                 case ControlMessageFactory.MessageTypeIdAddNewApplicationMessage:
                     ProcessAddNewApplicationMessage(controlMessage as AddNewApplicationMessage);
@@ -193,12 +193,16 @@ namespace MDS.Organization
         /// <summary>
         /// Process GetWaitingMessagesOfApplicationMessage
         /// </summary>
+        /// <param name="communicator">Communicator that sent message</param>
+        /// <param name="message"></param>
         /// <param name="controllerMessage">MDSControllerMessage object that includes controlMessage</param>
-        private void ProcessGetWaitingMessagesOfApplicationMessage(GetWaitingMessagesOfApplicationMessage controllerMessage)
+        private void ProcessGetWaitingMessagesOfApplicationMessage(ICommunicator communicator, GetWaitingMessagesOfApplicationMessage message, MDSControllerMessage controllerMessage)
         {
-            var messageList = OrganizationLayer.GetWaitingMessagesOfApplication(controllerMessage.ApplicationName);
+            var messageList = OrganizationLayer.GetWaitingMessagesOfApplication(message.ApplicationName);
 
-            SendMessageToAllReceivers(new GetWaitingMessagesOfApplicationResponseMessage(){ Messages = messageList });
+            //Send response message
+            //ReplyMessageToCommunicator(communicator, new GetWaitingMessagesOfApplicationResponseMessage() { Messages = messageList }, controllerMessage );
+            SendMessageToAllReceivers(new GetWaitingMessagesOfApplicationResponseMessage() { Messages = messageList });
 
         }
 
@@ -223,7 +227,8 @@ namespace MDS.Organization
                 clientApplications[i] = new GetApplicationListResponseMessage.ClientApplicationInfo
                                          {
                                              Name = applicationList[i].Name,
-                                             CommunicatorCount = applicationList[i].ConnectedCommunicatorCount
+                                             CommunicatorCount = applicationList[i].ConnectedCommunicatorCount,
+                                             MessageCount = applicationList[i].GetWaitingMessages(applicationList[i].GetMaxWaitingMessageId() +1, 1000).Count
                                          };
             }
 
