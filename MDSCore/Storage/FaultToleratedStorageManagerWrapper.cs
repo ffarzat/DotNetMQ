@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
+using MDS.Communication;
 using log4net;
 using MDS.Exceptions;
 

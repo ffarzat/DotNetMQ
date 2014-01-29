@@ -162,6 +162,9 @@ namespace MDS.Organization
                 case ControlMessageFactory.MessageTypeIdGetApplicationListMessage:
                     ProcessGetApplicationListMessage(communicator, controllerMessage);
                     break;
+                case ControlMessageFactory.MessageTypeIdGetWaitingMessagesOfApplicationMessage:
+                    ProcessGetWaitingMessagesOfApplicationMessage(controlMessage as GetWaitingMessagesOfApplicationMessage);
+                    break;
                 case ControlMessageFactory.MessageTypeIdAddNewApplicationMessage:
                     ProcessAddNewApplicationMessage(controlMessage as AddNewApplicationMessage);
                     break;
@@ -184,6 +187,22 @@ namespace MDS.Organization
                     throw new MDSException("Undefined MessageTypeId for ControlMessage: " + controlMessage.MessageTypeId);
             }
         }
+
+        #region GetWaitingMessagesOfApplicatioList
+
+        /// <summary>
+        /// Process GetWaitingMessagesOfApplicationMessage
+        /// </summary>
+        /// <param name="controllerMessage">MDSControllerMessage object that includes controlMessage</param>
+        private void ProcessGetWaitingMessagesOfApplicationMessage(GetWaitingMessagesOfApplicationMessage controllerMessage)
+        {
+            var messageList = OrganizationLayer.GetWaitingMessagesOfApplication(controllerMessage.ApplicationName);
+
+            SendMessageToAllReceivers(new GetWaitingMessagesOfApplicationResponseMessage(){ Messages = messageList });
+
+        }
+
+        #endregion
 
         #region GetApplicationListMessage
 

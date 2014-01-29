@@ -137,7 +137,6 @@
     <Compile Include="Settings\ServerInfoItem.cs" />
     <Compile Include="Storage\FaultToleratedStorageManagerWrapper.cs" />
     <Compile Include="Storage\IStorageManager.cs" />
-    <Compile Include="Storage\MDSMessageRecord.cs" />
     <Compile Include="Storage\MemoryStorage\MemoryStorageManager.cs" />
     <Compile Include="Storage\MsSqlStorage\MsSqlStorageManager.cs" />
     <Compile Include="Storage\MySqlStorage\MySqlNetStorageManager.cs" />

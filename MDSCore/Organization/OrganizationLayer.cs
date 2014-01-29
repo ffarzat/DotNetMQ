@@ -172,6 +172,23 @@ namespace MDS.Organization
         }
 
         /// <summary>
+        /// Returns a list of Waiting Messagens for an Application
+        /// </summary>
+        /// <param name="applicationName"></param>
+        public List<MDSMessageRecord> GetWaitingMessagesOfApplication(string applicationName)
+        {
+            var retunList = new List<MDSMessageRecord>();
+
+            if (_clientApplicationList.Applications.ContainsKey(applicationName))
+            {
+                int maxId = _clientApplicationList.Applications[applicationName].GetMaxWaitingMessageId();
+                retunList = _clientApplicationList.Applications[applicationName].GetWaitingMessages(maxId + 1, 1000);
+            }
+
+            return retunList;
+        }
+
+        /// <summary>
         /// This method is used to add a new client application to MDS while MDS is running.
         /// Used by MDSController to allow user to add a new application from MDSManager GUI.
         /// It does all necessary tasks to add new application (Updates XML file, adds application to needed

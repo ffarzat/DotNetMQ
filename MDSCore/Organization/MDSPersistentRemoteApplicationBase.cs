@@ -586,13 +586,13 @@ namespace MDS.Organization
         /// <param name="minId">Minimum Id of message record to get (minId included)</param>
         /// <param name="maxCount">Maximum number of records to get</param>
         /// <returns>List of messages</returns>
-        protected abstract List<MDSMessageRecord> GetWaitingMessages(int minId, int maxCount);
+        public abstract List<MDSMessageRecord> GetWaitingMessages(int minId, int maxCount);
 
         /// <summary>
         /// Gets Id of last incoming message that will be sent to this remote application.
         /// </summary>
         /// <returns>Id of last incoming message</returns>
-        protected abstract int GetMaxWaitingMessageId();
+        public abstract int GetMaxWaitingMessageId();
 
         /// <summary>
         /// Finds Next server for a message.
@@ -608,7 +608,7 @@ namespace MDS.Organization
         /// <summary>
         /// This class represents a message in _waitingMessages list.
         /// </summary>
-        private class WaitingMessage
+        public class WaitingMessage
         {
             /// <summary>
             /// Message record in storage manager.

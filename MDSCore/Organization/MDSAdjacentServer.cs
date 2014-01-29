@@ -149,7 +149,7 @@ namespace MDS.Organization
         /// <param name="minId">Minimum Id of message record to get (minId included)</param>
         /// <param name="maxCount">Maximum number of records to get</param>
         /// <returns>List of messages</returns>
-        protected override List<MDSMessageRecord> GetWaitingMessages(int minId, int maxCount)
+        public override List<MDSMessageRecord> GetWaitingMessages(int minId, int maxCount)
         {
             return StorageManager.GetWaitingMessagesOfServer(Name, minId, maxCount);
         }
@@ -158,7 +158,7 @@ namespace MDS.Organization
         /// Gets Id of last incoming message that will be sent to this server.
         /// </summary>
         /// <returns>Id of last incoming message</returns>
-        protected override int GetMaxWaitingMessageId()
+        public override int GetMaxWaitingMessageId()
         {
             return StorageManager.GetMaxWaitingMessageIdOfServer(Name);
         }

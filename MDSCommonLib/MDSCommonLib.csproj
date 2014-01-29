@@ -89,6 +89,7 @@
     <Compile Include="Communication\CommunicationStates.cs" />
     <Compile Include="Communication\CommunicationWays.cs" />
     <Compile Include="Communication\CommunicatorTypes.cs" />
+    <Compile Include="Communication\MDSMessageRecord.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\AddNewApplicationMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\ApplicationWebServiceInfo.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\ClientApplicationRefreshEventMessage.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Communication\Messages\ControllerMessages\GetServerGraphMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\GetServerGraphResponseMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\GetWaitingMessagesOfApplicationMessage.cs" />
+    <Compile Include="Communication\Messages\ControllerMessages\GetWaitingMessagesOfApplicationResponseMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\RemoveApplicationMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\RemoveApplicationResponseMessage.cs" />
     <Compile Include="Communication\Messages\ControllerMessages\ServerGraphInfo.cs" />

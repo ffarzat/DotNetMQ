@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 using System;
 using MDS.Communication.Messages;
 
-namespace MDS.Storage
+namespace MDS.Communication
 {
     /// <summary>
     /// Represents a message record in database/storage manager.
